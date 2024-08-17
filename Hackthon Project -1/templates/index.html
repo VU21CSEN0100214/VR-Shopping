@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On - Watches</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Virtual Try-On</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Select a Watch to Try On</h2>
+            <div class="products">
+                <div class="product" id="product1">
+                    <h3>Watch 1</h3>
+                    <img id="watch1-image" src="{{ url_for('static', filename='images/watch1.png') }}" alt="Watch 1">
+
+
+                </div>
+                <div class="product" id="product2">
+                    <h3>Watch 2</h3>
+                    <img id="watch2-image" src="{{ url_for('static', filename='images/watch2.png') }}" alt="Watch 2">
+                </div>
+            </div>
+
+            <div id="try-on-area">
+                <video id="camera-feed" autoplay></video>
+                <canvas id="overlay"></canvas>
+            </div>
+
+            <button id="try-on-button">Try On Watches</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Virtual Try-On. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+    
+
+</body>
+</html>

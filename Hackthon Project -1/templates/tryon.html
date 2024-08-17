@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On - Watches</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Virtual Watch Try-On</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/tryon">Virtual Try-On</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Try on Watches in Real-Time</h2>
+        <div class="ar-tryon-container">
+            <video id="ar-video" autoplay></video>
+            <div id="ar-overlay-left">
+                <!-- Placeholder for AR overlay of left-hand watch -->
+                <img src="https://via.placeholder.com/100" alt="Left Hand Watch" id="ar-watch-left">
+            </div>
+            <div id="ar-overlay-right">
+                <!-- Placeholder for AR overlay of right-hand watch -->
+                <img src="https://via.placeholder.com/100" alt="Right Hand Watch" id="ar-watch-right">
+            </div>
+        </div>
+        <div class="controls">
+            <h3>Select Watch for Left Hand</h3>
+            <button onclick="changeWatch('left', 'watch1')">Watch 1</button>
+            <button onclick="changeWatch('left', 'watch2')">Watch 2</button>
+            
+            <h3>Select Watch for Right Hand</h3>
+            <button onclick="changeWatch('right', 'watch1')">Watch 1</button>
+            <button onclick="changeWatch('right', 'watch2')">Watch 2</button>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
